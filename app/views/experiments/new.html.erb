@@ -1,0 +1,34 @@
+<div class="container">
+<div class="form">
+
+<h1>New Project</h1>
+
+<%= form_for @experiment do |f| %>
+
+<% if @experiment.errors.any? %>
+<div id="error_explanation">
+<h2>
+<%= pluralize(@experiment.errors.count, "error") %> prohibited
+this experiment from being saved:
+</h2>
+<ul>
+<% @experiment.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
+
+
+<%= f.text_field :min, :placeholder => "Min" %>
+<%= f.text_field :max, :placeholder => "Max" %>
+<%= f.text_field :description, :placeholder => "Description" %>
+<%= f.text_area :email_list, :placeholder => "Emails of Participants(seperated by whitespace)", size: "47x10" %>
+<%= f.submit "Create a new project", class: "btn-submit" %>
+
+
+<% end %>
+
+
+</div>
+</div>
