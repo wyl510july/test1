@@ -1,6 +1,7 @@
 class Experiment < ApplicationRecord
     has_many :expusers, :dependent => :destroy
     has_many :users, :through => :expusers
+    has_many :choices
     
     
     validates :min, presence: true, numericality: { only_integer: true}
@@ -21,7 +22,10 @@ class Experiment < ApplicationRecord
         if @email_list
             @email_list.split(/\s+/).map do |e|
                 if User.exists?(email: e)
-                self.users << User.find_by(email: e)
+                    u = User.find_by(email: e)
+                    u.update_attribute :state,1
+                    self.users << u
+                
                 end
             end
         end

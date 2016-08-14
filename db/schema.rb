@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805084039) do
+ActiveRecord::Schema.define(version: 20160812161441) do
 
   create_table "choices", force: :cascade do |t|
-    t.integer  "expuser_id"
-    t.string   "participant_name"
     t.integer  "preference"
     t.string   "submitted"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "experiment_id"
+    t.integer  "user_id"
+    t.integer  "participant_id"
   end
 
   create_table "experiments", force: :cascade do |t|
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160805084039) do
     t.string   "last_name"
     t.string   "password_digest"
     t.string   "role"
+    t.integer  "state"
   end
 
 end

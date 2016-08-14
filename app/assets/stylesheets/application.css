@@ -26,6 +26,63 @@ html, body {
   padding: 0;
   width: 100%;
 }
+/*choose page */
+.clear { 
+  clear: both; 
+  width: 1px; 
+  height: 0px; 
+  line-height: 0px; 
+  font-size: 1px; 
+}
+
+.box { 
+  position: static; 
+  float: left; 
+  width: 200px; 
+  height: 800px; 
+  margin: 60px; 
+}
+
+.bor {
+ position: static; 
+ width: 100px; 
+ height: 100px; 
+ margin: 0 0 5px 0 ; 
+ border: 1px solid #ccc; 
+ background: #ececec; 
+}
+
+.borp { 
+  position: absolute; 
+  width: 100px; 
+  height: 80px; 
+  margin: 10px; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  background: #ececec; 
+}
+
+.bg { 
+  float:left; 
+  width: 100px; 
+  height: 100px; 
+  margin: 8px 5px 0 auto; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+}
+
+.box2 { 
+  position: static; 
+  float: right; 
+  width: 200px; 
+  height: 800px; 
+  margin: 60px 
+}
+
+.bgColor { 
+  border: 1px dashed #f00; 
+}
+
 
 /* FORM PAGES */
 

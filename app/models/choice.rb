@@ -1,3 +1,4 @@
 class Choice < ApplicationRecord
-    belongs_to :expuser
+    belongs_to :user
+    belongs_to :experiment
 end

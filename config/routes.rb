@@ -21,9 +21,18 @@ Rails.application.routes.draw do
   get 'experiments/index'
   get    '/experiments/new'      => "experiments#new",     :as => "new_experiment"
   post   '/experiments'          => "experiments#create",  :as => "experiments"
+  delete '/experiments/:id'      => "experiments#destroy", :as => "experiment"
   
   #routes for choice
   
-  get    '/choices/new'      => "choices#new",     :as => "new_choice"
+  get 'choices/index'
+  
+  
+  get '/choices/new'
+  get '/choices/getinfo' => "choices#getinfo"
+  
+  get '/choices/create'=> "choices#create"
+  
+  get 'choices/wait'
 
 end

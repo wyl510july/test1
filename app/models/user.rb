@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :expusers, :dependent => :destroy
     has_many :experiments, :through => :expusers
+    has_many :choices
     
   
     validates_presence_of :first_name, :last_name
@@ -12,4 +13,7 @@ class User < ApplicationRecord
     def admin?
         self.role == 'admin'
     end
+    
+
+
 end

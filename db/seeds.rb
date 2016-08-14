@@ -6,4 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-admin = User.create(first_name: 'Admin', last_name: 'Admin', email: 'Admin@email.com', password: 'Admin1', password_confirmation: 'Admin1', role: 'admin')
+
+
+choice1 = Choice.create(experiment_id:23 , user_id:10, participant_id:11, preference:1, submitted: 'save')

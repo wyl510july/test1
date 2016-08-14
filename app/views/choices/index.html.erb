@@ -1,0 +1,27 @@
+<h1>Listing participants</h1>
+
+<table>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Status</th>
+</tr>
+
+<% @participants.each do |p| %>
+<tr>
+<td><%= p.first_name %></td>
+<td><%= p.last_name %></td>
+
+<% if p.choices.where(experiment_id:Experiment.last.id).count != 0 %>
+<td><%= Choice.where(:user_id => p.id, :experiment_id => Experiment.last.id).last.submitted %></td>
+<% else %>
+<td><%=  %></td>
+<% end %>
+</tr>
+<% end %>
+</table>
+
+
+<h3><%= link_to 'process team formation', '/',  data: { confirm: 'Are you sure?' }, class: "btn-submit"%></h3>
+
+<h3><%= button_to 'Delete this project', experiment_path(@experiment), :method => :delete, data: { confirm: 'Are you sure?' }, class: "btn-submit"%></h3>
