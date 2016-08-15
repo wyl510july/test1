@@ -11,6 +11,10 @@ class ChoicesController < ApplicationController
         
     end
     
+    def wait
+        current_user.update_attribute :state,2
+    end
+    
     def getinfo
         render :json =>{"ownerId" => current_user.id, "candidateList" => Experiment.last.users.where.not(:id => current_user.id), "candidateNum" => Experiment.last.users.count - Experiment.last.users.where(:id => current_user.id).count}.to_json
         
