@@ -1,3 +1,8 @@
+This is the online platform for team formation. I finished most of the project except the part to include Jian's code and he suggested me to ask for your opinions before we actually began that step. The project basically works fine although some minor problems happen some time, I am actively trying to figure out what leads to these small problems. In all cases, just refresh the page and it will work as expected.Don't hesitate to tell me your opinions and I'll see how to improve the website.
+
+To access the website, just enter rails server on terminal and then visit http://localhost:3000 on safari/chrome.
+
+
 <<<<<<< HEAD
 # README
 
