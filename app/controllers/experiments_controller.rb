@@ -37,6 +37,11 @@ class ExperimentsController < ApplicationController
     
     def destroy
         @experiment = Experiment.last
+        
+        @experiment.users.each do |user|
+        user.update_attribute :state,nil
+        end
+        
         @experiment.destroy
         
         current_user.update_attribute :state,nil
