@@ -1,35 +1,20 @@
-This is the online platform for team formation. I finished most of the project except the part to include Jian's code and he suggested me to ask for your opinions before we actually began that step. The project basically works fine although some minor problems happen some time, I am actively trying to figure out what leads to these small problems. In all cases, just refresh the page and it will work as expected.Don't hesitate to tell me your opinions and I'll see how to improve the website.
+This is the online platform for team formation. 
 
-To access the website, just enter rails server on terminal and then visit http://localhost:3000 on safari/chrome.
+To access the website, you need do the following steps:
 
+1. make sure you have downloaded ruby and rails
 
-<<<<<<< HEAD
-# README
+2. after using the git clone command, you enter the file
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+3. run $ bundle install to install missing gems
 
-Things you may want to cover:
+4. run $ rake db:migrate and $ rake db:seed to set up things about db
 
-* Ruby version
+5. run $rails server and then visit http://localhost:3000 on safari/chrome.
 
-* System dependencies
+There is only one preset account(set in db/seeds) for administrator:
+email: Admin@email.com
+password: Admin1
 
-* Configuration
+You can use this account to log in and access pages which are only open to administator.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# test1
-=======
-# test1
->>>>>>> eec49876975f95f6cf698e65a8c6d7c033743a56
-# test1
