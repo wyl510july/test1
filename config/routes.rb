@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   
   
   get '/choices/new'
+  
   get '/choices/getinfo' => "choices#getinfo"
   
   get '/choices/create'=> "choices#create"

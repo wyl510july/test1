@@ -1,7 +1,7 @@
 class ChoicesController < ApplicationController
     before_action :require_user
     before_action :require_admin, only: [:index]
-    before_action :no_require_admin, only: [:getinfo, :create, :wait]
+    before_action :no_require_admin, only: [:create, :wait]
     
     
     def index

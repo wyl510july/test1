@@ -1,3 +1,4 @@
+
 var ownerId;
 var candidateList;
 var candidateNum;
