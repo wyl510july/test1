@@ -27,7 +27,6 @@ Rails.application.routes.draw do
   
   get 'choices/index'
   
-  
   get '/choices/new'
   
   get '/choices/getinfo' => "choices#getinfo"
@@ -35,5 +34,6 @@ Rails.application.routes.draw do
   get '/choices/create'=> "choices#create"
   
   get 'choices/wait'
+  
 
 end

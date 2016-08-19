@@ -1,8 +1,7 @@
 class ChoicesController < ApplicationController
     before_action :require_user
     before_action :require_admin, only: [:index]
-    before_action :no_require_admin, only: [:create, :wait]
-    
+    before_action :no_require_admin, only: [:new, :create, :wait]
     
     def index
         @choices = Choice.all
@@ -11,8 +10,12 @@ class ChoicesController < ApplicationController
         
     end
     
-    def wait
-        current_user.update_attribute :state,2
+    def new
+        redirect_to '/experiments/index' if current_user.state == nil
+        
+        redirect_to '/choices/wait' if current_user.state == 2
+        
+        render 'new' if current_user.state == 1
     end
     
     def getinfo
@@ -40,7 +43,14 @@ class ChoicesController < ApplicationController
     
     def wait
         current_user.update_attribute :state,2
+        
+        redirect_to '/experiments/index' if current_user.state == nil
+        
+        redirect_to '/choices/new' if current_user.state == 1
+        
+        render 'wait' if current_user.state == nil
     end
+
 
 
 end

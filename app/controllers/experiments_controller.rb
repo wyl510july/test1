@@ -8,9 +8,8 @@ class ExperimentsController < ApplicationController
         
         redirect_to '/choices/wait' if current_user.state == 2
 
-
         render 'index' if current_user.state == nil
-  
+   
     end
 
     def new
