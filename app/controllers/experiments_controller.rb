@@ -1,37 +1,47 @@
 class ExperimentsController < ApplicationController
     before_action :require_user
-    before_action :require_admin, only: [:new, :create]
-    before_action :no_require_admin, only: [:index]
+    before_action :require_admin
     
     def index
-        redirect_to '/choices/new' if current_user.state == 1
-        
-        redirect_to '/choices/wait' if current_user.state == 2
-
-        render 'index' if current_user.state == nil
+        @participants = User.where(role: "participant");
+        @experiment = Experiment.last
    
     end
 
     def new
         @experiment = Experiment.new
         
-        if current_user.state == 4
-            redirect_to '/choices/index'
-        else
-            @experiment = Experiment.new
-            render 'new'
-        end
+        redirect_to '/experiments/index' if current_user.state == 1
+        
+        redirect_to '/choices/index' if current_user.state == 2
+        
+        render 'new' if current_user.state == nil
     end
     
     def create
         @experiment = Experiment.new(allowed_params)
         if @experiment.save
-            current_user.update_attribute :state,4
-            redirect_to '/choices/index', notice: "Successfully created project."
+            current_user.update_attribute :state,1
+            redirect_to '/experiments/index', notice: "Successfully created project."
         else
             render :new
         end
     end
+    
+    def add
+        @experiment = Experiment.last
+        @participants = User.where(:role => "participant")
+        
+        @participants.each do |p|
+            p.update_attribute :state,3
+            @experiment.users << p
+            
+        end
+        current_user.update_attribute :state,2
+        redirect_to '/choices/index'
+    end
+    
+    
     
     
     def destroy
@@ -39,6 +49,7 @@ class ExperimentsController < ApplicationController
         
         @experiment.users.each do |user|
         user.update_attribute :state,nil
+        user.update_attribute :role,nil
         end
         
         @experiment.destroy

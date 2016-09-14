@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
   def no_require_admin
       redirect_to '/' if current_user.admin?
   end
-
   
+
 end

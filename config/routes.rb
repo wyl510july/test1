@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'welcome/index'
-  
   root 'welcome#index'
+  
+  
+  get 'welcome/join'
+  get 'welcome/wait'
+  get 'welcome/stop'
+  
+
+  
+  
   
   #routes for user
   get 'signup'  => 'users#new'
@@ -21,6 +29,7 @@ Rails.application.routes.draw do
   get 'experiments/index'
   get    '/experiments/new'      => "experiments#new",     :as => "new_experiment"
   post   '/experiments'          => "experiments#create",  :as => "experiments"
+  get 'experiments/add'
   delete '/experiments/:id'      => "experiments#destroy", :as => "experiment"
   
   #routes for choice

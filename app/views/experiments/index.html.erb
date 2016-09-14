@@ -1,2 +1,21 @@
-<h1>No choice to make...</h1>
+<h1>Who wants to join?</h1><h3>due: Sept.1st</h3>
 
+<table>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email Address</th>
+</tr>
+
+<% @participants.each do |p| %>
+<tr>
+<td><%= p.first_name %></td>
+<td><%= p.last_name %></td>
+<td><%= p.email %></td>
+<td><%= link_to 'Delete', user_path(p), method: :put, data: { confirm: 'Are you sure this person is not permitted to join this project?' } %></td>
+<% end %>
+</table>
+
+
+
+<h3><%= link_to 'Finalize participants', '/experiments/add', class: "btn-submit"%> </h3>

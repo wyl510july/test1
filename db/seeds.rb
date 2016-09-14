@@ -8,4 +8,4 @@
 
 
 
-Admin = User.create(first_name:"Admin", last_name: "Admin",  email: "Admin@email.com", password: "Admin1", role: "admin")
+Admin = User.create(first_name:"Admin", last_name: "Admin",  email: "Admin@email.com", password: "Admin1", role: "admin", state: nil)

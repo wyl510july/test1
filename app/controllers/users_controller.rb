@@ -13,6 +13,14 @@ class UsersController < ApplicationController
         end
     end
     
+    def update
+        @participant = User.find(params[:id])
+        @participant.update_attribute :role,nil
+        @participant.update_attribute :state,1
+        redirect_to '/experiments/index'
+    end
+    
+    
     private
     def user_params
         params.require(:user).permit!

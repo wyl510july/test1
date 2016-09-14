@@ -46,7 +46,7 @@ html, body {
 .bor {
  position: static; 
  width: 100px; 
- height: 100px; 
+ height: 20px; 
  margin: 0 0 5px 0 ; 
  border: 1px solid #ccc; 
  background: #ececec; 
@@ -55,7 +55,7 @@ html, body {
 .borp { 
   position: absolute; 
   width: 100px; 
-  height: 80px; 
+  height: 20px; 
   margin: 10px; 
   padding: 10px; 
   border: 1px solid #ccc; 
@@ -65,7 +65,7 @@ html, body {
 .bg { 
   float:left; 
   width: 100px; 
-  height: 100px; 
+  height: 20px; 
   margin: 8px 5px 0 auto; 
   padding: 10px; 
   border: 1px solid #ccc; 

@@ -19,11 +19,10 @@ this experiment from being saved:
 </div>
 <% end %>
 
-
-<%= f.text_field :min, :placeholder => "Min" %>
-<%= f.text_field :max, :placeholder => "Max" %>
-<%= f.text_field :description, :placeholder => "Description" %>
-<%= f.text_area :email_list, :placeholder => "Emails of Participants(seperated by whitespace)", size: "47x10" %>
+<%= f.text_field :name, :placeholder => "Project Name" %>
+<%= f.text_field :min, :placeholder => "Min Size of Each Group" %>
+<%= f.text_field :max, :placeholder => "Max Size of Each Group" %>
+<%= f.text_area :description, :placeholder => "Project Description", size: "47x6" %>
 <%= f.submit "Create a new project", class: "btn-submit" %>
 
 
